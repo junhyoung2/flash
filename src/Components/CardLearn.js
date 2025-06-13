@@ -19,16 +19,22 @@ const CardLearn = ({ cardData, onExit }) => {
 
     return (
         <div className="learn-mode">
-            <h2>플래시카드 학습</h2>
+            <h2>조사병단 도전 과제</h2>
             <p>질문 : {cardData[currentIdx].question}</p>
             {show && <p>답변 : {cardData[currentIdx].answer}</p>}
-            <button
-                onClick={() => setShow(!show)}
-            >
-                {show ? "답변닫기" : "답변보기"}
-            </button>
-            <button onClick={handleNext}>다음 카드</button>
-            <button onClick={()=>{onExit(true)}}>학습 종료</button>
+            <div className="button-group">
+                <button onClick={() => setShow(!show)}>
+                    {show ? "답변닫기" : "답변보기"}
+                </button>
+                <button onClick={handleNext}>다음 카드</button>
+                <button
+                    onClick={() => {
+                        onExit(true);
+                    }}
+                >
+                    학습 종료
+                </button>
+            </div>
         </div>
     );
 };
