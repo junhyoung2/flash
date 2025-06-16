@@ -15,7 +15,7 @@ const FlashCard = ({ cardData, onSelected, onLearn }) => {
                         onLearn(true);
                     }}
                 >
-                    학습시작
+                    과제시작
                 </button>
                 <button
                     onClick={() => {
